@@ -16,3 +16,11 @@ scripts/nabeel-distribution.py --config /secure/path/destinations.json run youtu
 ```
 
 Production/live publishing remains a separate explicit operation. A real private/unlisted destination test requires the corresponding credential to be supplied outside Git.
+
+## Canonical Owncast destination
+
+The canonical Owncast runtime remains on `codestra-desktop`. MediaMTX/FFmpeg must not target Owncast's loopback port directly. The reviewed private transport is:
+
+`middleware -> 10.0.0.73:19361 -> desktop source-restricted socat relay -> 127.0.0.1:1936 -> Owncast`
+
+The destination id is `owncast-desktop`, the secret reference is `NABEEL_OWNCAST_STREAM_KEY`, and the example remains `enabled: false`. The stream key is never committed and the private relay only accepts `10.0.0.220/32`.

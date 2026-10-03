@@ -1,0 +1,19 @@
+[Unit]
+Description=Codestra MediaMTX local media router
+After=network.target
+
+[Service]
+Type=simple
+User=videoctl
+Group=videoctl
+ExecStart=/usr/local/bin/mediamtx /etc/codestra-video/mediamtx.yml
+Restart=on-failure
+RestartSec=3
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectHome=true
+ProtectSystem=strict
+ReadWritePaths=/srv/codestra-video
+
+[Install]
+WantedBy=multi-user.target

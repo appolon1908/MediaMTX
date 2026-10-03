@@ -3,6 +3,13 @@
   "source": "rtsp://127.0.0.1:8554/nabeel",
   "destinations": [
     {
+      "id": "owncast-desktop",
+      "protocol": "rtmp",
+      "enabled": false,
+      "url": "rtmp://10.0.0.73:19361/live/{secret}",
+      "secret_env": "NABEEL_OWNCAST_STREAM_KEY"
+    },
+    {
       "id": "youtube",
       "protocol": "rtmp",
       "enabled": false,
