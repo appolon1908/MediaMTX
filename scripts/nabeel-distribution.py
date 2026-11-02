@@ -10,7 +10,8 @@ def load(path):
 def resolved(dest):
     secret_name=dest.get('secret_env') or ''
     secret=os.environ.get(secret_name) if secret_name else None
-    enabled=bool(dest.get('enabled',False))
+    # Only an explicit JSON boolean can authorize a destination.
+    enabled=dest.get('enabled',False) is True
     ready=enabled and bool(secret) and bool(dest.get('url'))
     reason='ready' if ready else ('disabled' if not enabled else ('missing_secret' if not secret else 'missing_url'))
     return {'id':dest.get('id'),'protocol':dest.get('protocol','rtmp'),'enabled':enabled,'ready':ready,'reason':reason,'secret_ref':secret_name}

@@ -5,9 +5,9 @@
   "authorization_date": "2026-11-02",
   "required_checks": [
     {
-      "context": "nabeel-integration",
+      "context": "mediamtx-source",
       "integration_id": 15368,
-      "workflow": ".github/workflows/nabeel-integration-ci.yml"
+      "workflow": ".github/workflows/mediamtx-source.yml"
     }
   ],
   "replaces_contexts": [
@@ -25,5 +25,5 @@
     "deployment_authority"
   ],
   "production_activation_authorized": false,
-  "note": "GitHub rulesets remain the enforcement authority. This source-validation policy is not custom-controller certification or deployment authorization."
+  "note": "GitHub rulesets remain the enforcement authority. Owned distribution status/configuration and dry-plan validation is not hardware/controller certification or deployment authorization."
 }
