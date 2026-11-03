@@ -1,0 +1,17 @@
+logLevel: info
+api: yes
+apiAddress: 127.0.0.1:9997
+metrics: yes
+metricsAddress: 127.0.0.1:9998
+pprof: no
+rtsp: yes
+rtspAddress: 127.0.0.1:8554
+rtmp: yes
+rtmpAddress: 127.0.0.1:19350
+hls: yes
+hlsAddress: 127.0.0.1:18888
+webrtc: yes
+webrtcAddress: 127.0.0.1:18889
+srt: no
+paths:
+  test:
